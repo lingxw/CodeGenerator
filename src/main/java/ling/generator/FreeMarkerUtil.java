@@ -45,6 +45,7 @@ public class FreeMarkerUtil {
 	        File file = new File(dir + File.separator + name);
 	        Writer out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file)));
 	        temp.process(dataModel, out);
+	        out.close();
 	        return true;
 		} catch (TemplateNotFoundException e) {
 			e.printStackTrace();
